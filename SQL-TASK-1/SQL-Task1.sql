@@ -39,3 +39,31 @@ insert into Traniees values ('jeya','surya',60000,'2023-01-23 ', 'Designer')
 --PERFORMING GIVEN QUERIES 1-10
 
 --1. Retrieve all FIRST_NAME STARTING WITH J-T and should differentiate between Uppercase and lowercase.
+select * from Traniees where FIRST_NAME like '[J-T]%' COLLATE SQL_Latin1_General_CP1_CS_AS
+
+--2. Retrieve all SALARY BETWEEN 20000 TO 50000
+select * from Traniees where SALARY between 20000 and 50000
+
+--3. Retrieve all FIRST_NAME ending with i
+select * from Traniees where FIRST_NAME like '%i'
+
+--4. Retrieve all salary without duplications
+select DISTINCT SALARY from Traniees
+
+--5. Retrieve all records whose department is Developer and Designer
+select * from Traniees where DEPARTMENT IN ('Developer','Designer')
+
+--6. Retrieve all Trainee_ID less than 5
+select * from Traniees where Traniee_ID <5
+
+--7. Limit the records by retrieving the 6 to 15 records
+select * from Traniees order by Traniee_ID
+OFFSET 5 ROWS 
+FETCH NEXT 10 ROWS ONLY 
+
+--8. Retrieve the top 5 records with Ties
+select Top 5 * from Traniees
+
+
+
+
