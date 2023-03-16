@@ -29,7 +29,7 @@ insert into Traniees values ('nandha','kumar',50000,'2023-01-23 ', 'Developer')
 insert into Traniees values ('tharun','karthick',450000,'2023-01-23 ', 'Admin')
 insert into Traniees values ('Karthick','Shiva',20000,'2023-01-23 ', 'A-Developer')
 insert into Traniees values ('Ram','Krishnan',60000,'2023-01-23 ', 'Designer')
-insert into Traniees values ('hari','narayanan',30000,'2023-01-23 ', 'Designer')
+insert into Traniees values ('hari','naarayanan',30000,'2023-01-23 ', 'Designer')
 insert into Traniees values ('Sriman','k',38000,'2023-01-23 ', 'Designer')
 insert into Traniees values ('sriram','j',40000,'2023-01-23 ', 'A-Designer')
 insert into Traniees values ('Yamini','priya',52000,'2023-01-23 ', 'Devop-E')
@@ -62,8 +62,13 @@ OFFSET 5 ROWS
 FETCH NEXT 10 ROWS ONLY 
 
 --8. Retrieve the top 5 records with Ties
-select Top 5 * from Traniees
+select Top 5 with ties * from Traniees order by salary desc
 
 
+--9. Retrieve the records in descending order based on department column.
+select * from Traniees order by DEPARTMENT desc
+
+--10. Retrieve all  last_name with 3rd character as 'a.'
+select * from Traniees where LAST_NAME like '__a%'
 
 
